@@ -1,21 +1,13 @@
 # -*- coding: utf-8 -*-
+import math
 
 N1 = int(input('Какой размер массива ?\n'))
 
-I = N1
-r = int(1)
-i = 0
-
-while i < 1:
-    p = 2 ** r
-    
-    if I > p:
-        r += 1
-    else:
-        N2 = 2** r
-        print('Будет массив из ', N2,'элементов ')
-        i = i + 1
-        
+lg = math.log(N1, 2)
+lg = math.ceil(lg)
+lg = math.pow(2, lg)
+N2 = int(lg)
+print('Ближайший допустимы размер массива', N2)
 C = N2
 mas = []
 E = 0

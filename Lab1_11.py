@@ -1,15 +1,17 @@
-# -*- coding: utf-8 -*-
-from decimal import Decimal
+def frange(start, stop, step):
+    x = start
+    my_list = []
+    if step > 0:
+        while x < stop:
+            my_list.append(round(x, 1))
+            x += step
+    else: 
+        while x > stop:
+            my_list.append(round(x, 1))
+            x += step
+    return my_list
 
-def frange(start, stop, step): 
-    step = Decimal(step)    
-  
-    while start < stop: 
-        start = Decimal(start)
-        start = start.quantize(Decimal("1.0"))      
-        print(start)
-        start = start + step
-         
-frange(int(input('от ')),int(input('до ')),float((input('шаг'))))
-       
+for f in frange(1, 5, 0.1):
+    print(f)
+    
 input()
