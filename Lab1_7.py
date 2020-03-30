@@ -1,13 +1,6 @@
 # -*- coding: utf-8 -*-
-stroka = ('www.vk.com', 'www.odn', 'www.mail.ru', 'google')
-
-for s in stroka:
-    s = str(s)
-    if s.startswith('www.', 0, 4):
-        s = 'http://' + s
-        if s.endswith('.com'):
-            print(s)
-        else:
-            s = s + '.com'
-            print(s)
+addresses = ["www.address_1.com", "www.address_2", "address_3.com", "address_4"]
+addresses = [i + ".com" if not i[-4:] == ".com" else i for i in ["http://" + i if i[:4] == "www." else i for i in addresses]]
+addresses = [i + ".com" if not i[-4:] == ".com" else i for i in addresses]
+print(addresses)
 input()
